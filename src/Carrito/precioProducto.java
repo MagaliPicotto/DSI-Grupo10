@@ -1,7 +1,7 @@
 package carrito;
 import java.util.Date;
 
-class PrecioProducto {
+public class PrecioProducto {
     private Date fechaInicioVigencia ;
     private Date fechaFinVigencia ;
     private float precio;
@@ -13,19 +13,31 @@ class PrecioProducto {
     }
 
     public Date getFechaInicioVigencia() {
-        return fechaInicioVigencia;
+        return this.fechaInicioVigencia;
     }
 
     public Date getFechaFinVigencia() {
-        return fechaFinVigencia;
+        return this.fechaFinVigencia;
+    }
+
+    public float getPrecio() {
+        return this.precio;
+    }
+
+    public void setFechaInicioVigencia(Date fechaInicioVigencia) {
+        this.fechaInicioVigencia = fechaInicioVigencia;
+    }
+
+    public void setFechaFinVigencia(Date fechaFinVigencia) {
+        this.fechaFinVigencia = fechaFinVigencia;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
 
     public boolean getCumpleVigencia(Date fecha) {
         return (fecha.after(fechaInicioVigencia) || fecha.equals(fechaInicioVigencia)) && 
         (fecha.before(fechaFinVigencia) || fecha.equals(fechaFinVigencia));
-    }
-
-    public double getPrecio() {
-        return precio;
     }
 } 

@@ -1,8 +1,9 @@
 package cliente;
-package Pago;
-package envio;
-import java.util.List;
+import carrito.Carrito;
+import envio.Direccion;
 import java.util.ArrayList;
+import java.util.List;
+import pago.Tarjeta;
 
 public class Cliente {
     private String nombre;
@@ -23,8 +24,8 @@ public class Cliente {
         this.esPreferencial = esPreferencial;        
     }
 
-    public double getMontoDeuda() {
-        double totalDeuda = 0;
+    public float getMontoDeuda() {
+        float totalDeuda = 0;
         for (Carrito c : carritos) {
             totalDeuda += c.getMontoDeuda();
         }
@@ -33,5 +34,61 @@ public class Cliente {
 
     public boolean estaHabilitado() {
         return true;
+    }
+
+    public String getNombre() {
+       return this.nombre;
+    }
+
+    public String getApellido() {
+       return this.apellido;
+    }
+
+    public String getEmail() {
+       return this.email;
+    }
+
+    public List<Direccion> getDirecciones() {
+       return this.direcciones;
+    }
+
+    public List<Carrito> getCarritos() {
+       return this.carritos;
+    }
+
+    public List<Tarjeta> getTarjetas() {
+       return this.tarjetas;
+    }
+
+    public boolean isEsPreferencial() {
+       return this.esPreferencial;
+    }
+
+    public void setNombre(String nombre) {
+       this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+       this.apellido = apellido;
+    }
+
+    public void setEmail(String email) {
+       this.email = email;
+    }
+
+    public void setDirecciones(List<Direccion> direcciones) {
+       this.direcciones = direcciones;
+    }
+
+    public void setCarritos(List<Carrito> carritos) {
+       this.carritos = carritos;
+    }
+
+    public void setTarjetas(List<Tarjeta> tarjetas) {
+       this.tarjetas = tarjetas;
+    }
+
+    public void setEsPreferencial(boolean esPreferencial) {
+       this.esPreferencial = esPreferencial;
     }
 }

@@ -1,9 +1,8 @@
 package carrito;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 
-class Producto {
+public class Producto {
     private String EAN13;
     private String nombre;
     private ArrayList<PrecioProducto> preciosHistoricos = new ArrayList<>();
@@ -20,11 +19,27 @@ class Producto {
 
     public float getPrecio(Date fechaVigencia){
         for (PrecioProducto precioHist : preciosHistoricos) {
-            if (precioHist.getFechaVigencia().equals(fechaVigencia)) {
+            if (precioHist.getCumpleVigencia(fechaVigencia)) {
                 return precioHist.getPrecio();
             }
         }
         
         return -1; 
+    }
+
+    public ArrayList<PrecioProducto> getPreciosHistoricos() {
+        return preciosHistoricos;
+    }
+
+    public void setEAN13(String EAN13) {
+        this.EAN13 = EAN13;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPreciosHistoricos(ArrayList<PrecioProducto> preciosHistoricos) {
+        this.preciosHistoricos = preciosHistoricos;
     }
 }

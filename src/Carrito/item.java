@@ -1,6 +1,6 @@
 package carrito;
 
-class Item {
+public class Item {
     private Carrito carrito;
     private Producto producto;
     private int cantidad;
@@ -10,7 +10,39 @@ class Item {
         this.carrito = carrito;
         this.producto = producto;
         this.cantidad = cantidad;
-        this.precioUnitario = this.getPrecioOficial();
+        this.precioUnitario = producto.getPrecio(this.carrito.getFechaCompra());
+    }
+
+    public Carrito getCarrito() {
+        return this.carrito;
+    }
+
+    public Producto getProducto() {
+        return this.producto;
+    }
+
+    public int getCantidad() {
+        return this.cantidad;
+    }
+
+    public float getPrecioUnitario() {
+        return this.precioUnitario;
+    }
+
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setPrecioUnitario(int precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
 
     public float getPrecio() {
@@ -18,7 +50,7 @@ class Item {
     }
 
     public float getPrecioOficial(){
-        return producto.getPrecio(carrito.getFechaCompra());
+        return producto.getPrecio(this.carrito.getFechaCompra());
     }
 
     public float getDescuento() {
