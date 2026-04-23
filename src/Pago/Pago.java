@@ -1,4 +1,4 @@
-package Pago;
+package pago;
 
 
 public class Pago {

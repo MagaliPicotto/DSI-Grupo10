@@ -1,4 +1,4 @@
-package Carrito;
+package carrito;
 
 class Item {
     private Carrito carrito;

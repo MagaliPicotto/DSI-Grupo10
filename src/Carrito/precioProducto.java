@@ -1,4 +1,4 @@
-package Carrito;
+package carrito;
 import java.util.Date;
 
 class PrecioProducto {

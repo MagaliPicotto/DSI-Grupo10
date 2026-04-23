@@ -1,3 +1,6 @@
+package cliente;
+package Pago;
+package envio;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -9,7 +12,6 @@ public class Cliente {
     private List<Carrito> carritos = new ArrayList<>();
     private List<Tarjeta> tarjetas = new ArrayList<>();
     private boolean esPreferencial;
-
 
     public Cliente (String nombre, String apellido, String email, List<Direccion> direcciones, List<Carrito> carritos, List<Tarjeta> tarjetas, boolean esPreferencial) {
         this.nombre = nombre;
